@@ -1,27 +1,27 @@
-## puppet-planet
+# puppet-planet
 
 Simple module with just the basic stuff. Tested on planet 1.7 with Red Hat Linux.
 
-### Classes
+## Classes
 
-#### planet
+### planet
 
-#### planet::surface
+### planet::surface
 
 Surface node
 
-#### planet::impact
+### planet::impact
 
 Impact node
 
-#### planet::orbit
+### planet::orbit
 
 Orbit node
 
-#### planet::memcached
+### planet::memcached
 
 Memcached server
 
-#### planet::mysql
+### planet::mysql
 
 MySQL server
