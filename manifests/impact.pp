@@ -1,4 +1,5 @@
-
+# Class planet::impact
+#
 # Sets up a Planet impact node
 #
 class planet::impact inherits planet {

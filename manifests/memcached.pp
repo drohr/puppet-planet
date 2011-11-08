@@ -10,6 +10,7 @@ class planet::memcached inherits planet {
     }
     # service
     service { "memcached":
+        ensure => running,
         enable     => true,
         hasstatus  => true,
         require => [ Package["memcached"] ],

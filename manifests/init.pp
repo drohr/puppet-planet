@@ -11,6 +11,12 @@ class planet {
     package { [ "python2.6-libs" ]:
         ensure  => present,
     }
+    # different malloc on later releases of rh.
+    if $operatingsystemrelease > 5.5 {
+        package { [ "jemalloc" ]:
+            ensure  => 2.1.3-1esn,
+        }
+    }
     # planet.yml
     file { "/etc/planet.yml":
         ensure => present,

@@ -4,6 +4,10 @@
 #
 class planet::surface inherits planet {
 
+    # httpd package verfication
+    package { [ "httpd" ]:
+        ensure  => present,
+    }
     # wsgi package verfication
     package { [ "python2.6-mod_wsgi" ]:
         ensure  => present,
