@@ -1,8 +1,7 @@
-# puppet-planet
 
 Simple module with just the basic stuff. Tested on planet 1.7 with Red Hat Linux.
 
-## Classes
+### Classes
 <pre>
 planet::surface
 planet::impact
