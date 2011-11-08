@@ -4,24 +4,13 @@ Simple module with just the basic stuff. Tested on planet 1.7 with Red Hat Linux
 
 ## Classes
 
-### planet
+ planet::surface
 
-### planet::surface
+ planet::impact
 
-Surface node
+ planet::orbit
 
-### planet::impact
+ planet::memcached
 
-Impact node
+ planet::mysql
 
-### planet::orbit
-
-Orbit node
-
-### planet::memcached
-
-Memcached server
-
-### planet::mysql
-
-MySQL server
