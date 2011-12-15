@@ -2,16 +2,19 @@
 #
 # Sets up a Planet surface node
 #
+
 class planet::surface inherits planet {
 
     # httpd package verfication
     package { [ "httpd" ]:
         ensure  => present,
     }
+
     # wsgi package verfication
     package { [ "python2.6-mod_wsgi" ]:
         ensure  => present,
     }
+
     # mod_wsgi.conf
     file { "/etc/httpd/conf.d/mod_wsgi.conf":  
         ensure => present,
@@ -21,6 +24,7 @@ class planet::surface inherits planet {
         mode  => "0664",
         require => [ Package["python2.6-mod_wsgi"] ],
     }
+
     # surface.conf
     file { "/etc/httpd/conf.d/surface.conf":      
         ensure => present,
@@ -31,14 +35,16 @@ class planet::surface inherits planet {
         notify  => Exec["reload-surface"],
         require => [ Package["esnplanet-framework"] ],
     }
+
     # service
     service { "surface":
         enable     => true,
         require => [ Package["esnplanet"] ],
     }
+
     exec { "reload-surface":
         command     => "/etc/init.d/surface restart",
-        onlyif      => "/etc/init.d/planet validate",
+        onlyif      => "/etc/init.d/httpd configtest",
         require     => Service["surface"],
         refreshonly => true,
     }

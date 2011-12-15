@@ -2,20 +2,23 @@
 #
 # Sets up a Planet memcached node
 #
+
 class planet::memcached inherits planet {
 
     # memcached package verfication
     package { [ "memcached" ]:
         ensure  => present,
     }
+
     # service
     service { "memcached":
         ensure => running,
         enable     => true,
         hasstatus  => true,
-        require => [ Package["memcached"] ],
+        require => [ Package["memcached"], File["/etc/default/memcached"] ],
     }
-    # memcached
+
+    # memcached configuration
     file { "/etc/sysconfig/memcached":  
         ensure => present,
         source => "puppet:///modules/planet/memcached",
@@ -23,6 +26,7 @@ class planet::memcached inherits planet {
         owner => "root",
         mode  => "0644",
         require => [ Package["memcached"] ],
+        notify => Service["memcached"],
     }
 
 }
