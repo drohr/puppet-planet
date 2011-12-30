@@ -3,7 +3,7 @@
 # Sets up a Planet memcached node
 #
 
-class planet::memcached inherits planet {
+class planet::memcached {
 
     # memcached package verfication
     package { [ "memcached" ]:

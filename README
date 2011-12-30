@@ -1,0 +1,30 @@
+Puppet module: planet
+
+
+DESCRIPTION:
+This module can be used to install the ESN Planet Stack. http://www.planetframework.com/
+Basic stuff included. So far, only been tested on Planet 1.7 on RHEL.
+
+Basic configuration files a provided but should be modified.
+
+USER VARIABLES:
+
+
+USAGE:
+# Standard Classes 
+include planet             # Install and run planet 
+
+include planet::surf       # Enables surface features.
+include planet::impact     # Enables impact features.
+include planet::orbit      # Enables orbit features.
+
+include planet::memcached  # Sets up a basic memcached
+inlcude planet::mysql      # Sets up a basic mysql
+
+
+GENERAL VARIABLES:
+  
+
+DEPENDENCIES:
+
+

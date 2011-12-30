@@ -2,7 +2,7 @@
 #
 # Sets up a Planet database node
 #
-class planet::mysql inherits planet {
+class planet::mysql {
 
 
 }
